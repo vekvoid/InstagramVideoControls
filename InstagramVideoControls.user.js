@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram Video Controls
 // @namespace    https://github.com/vekvoid/
-// @version      0.1
+// @version      1.0
 // @description  try to take over the world!
 // @author       Vekvoid
 // @match        *://www.instagram.com/*
