@@ -11,5 +11,8 @@
 
 (function() {
   'use strict';
-  $('video').attr({ controls: '', style: 'z-index: 3;' });
+  $('body').on('DOMSubtreeModified', 'main > section > div > div:first-child', function() {
+    // Need to be optimized
+    $('video').attr({ controls: '', style: 'z-index: 3;' });
+  });
 })();
