@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram Video Controls
 // @namespace    https://github.com/vekvoid/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       Vekvoid
 // @match        *://www.instagram.com/*
@@ -11,9 +11,25 @@
 
 (function() {
   'use strict';
-  $('body').on('DOMSubtreeModified', 'main > section > div > div:first-child', function() {
-    $('video:not(.vekv-videoControls)')
-      .attr({ controls: '', style: 'z-index: 1;' })
-      .addClass('vekv-videoControls');
-  });
+
+  const elementToListen = document.querySelectorAll('main > section > div:first-child > div:first-child');
+  
+  elementToListen[0].addEventListener('DOMSubtreeModified', addVideoControls);
+
 })();
+
+function addVideoControls() {
+  const foundVideos = document.querySelectorAll('video:not(.vekv-videoControls)');
+
+  Array.prototype.forEach.call(foundVideos, (video) => {
+    //const parent = video.parentNode;
+
+    video.setAttribute('controls', '');
+    video.setAttribute('style', 'z-index: 1;');
+
+    if (video.classList)
+      video.classList.add('vekv-videoControls');
+    else
+      video.className += ' vekv-videoControls';
+  });
+}
