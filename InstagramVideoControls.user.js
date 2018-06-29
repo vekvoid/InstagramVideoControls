@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram Video Controls
 // @namespace    https://github.com/vekvoid/
-// @version      0.5
+// @version      0.5.1
 // @description  try to take over the world!
 // @author       Vekvoid
 // @match        *://www.instagram.com/*
@@ -46,7 +46,7 @@ function noVideosFound(videos) {
 
 function addVideoControls(video) {
   video.setAttribute('controls', '');
-  video.setAttribute('style', 'z-index: 1;');
+  video.setAttribute('style', 'z-index: 2;');
 }
 
 function addClassVideoControls(video) {
