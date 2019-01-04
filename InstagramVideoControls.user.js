@@ -46,7 +46,7 @@ function noVideosFound(videos) {
 
 function addVideoControls(video) {
   video.setAttribute('controls', '');
-  video.setAttribute('style', 'z-index: 2;');
+  video.setAttribute('style', 'z-index: 1;');
 }
 
 function addClassVideoControls(video) {
